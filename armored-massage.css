@@ -10,6 +10,8 @@
   inherits: false;
 }
 
+/* section_home_cta -> card__with-border */
+
 .button.is-secondary::after,
 .button.is-secondary::before {
   content: '';
