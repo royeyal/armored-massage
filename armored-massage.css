@@ -12,8 +12,8 @@
 
 /* section_home_cta -> card__with-border */
 
-.button.is-secondary::after,
-.button.is-secondary::before {
+.button::after,
+.button::before {
   content: '';
   position: absolute;
   height: 100%;
@@ -28,14 +28,29 @@
   /* animation: 3s spin linear infinite; */
 }
 
-.button.is-secondary::before {
+.button::before {
   filter: blur(1.5rem);
   opacity: 0.5;
 }
 
-.button.is-secondary:hover::before,
-.button.is-secondary:hover::after {
+.button:hover::before,
+.button:hover::after {
   animation: 3s spin linear infinite;
+}
+
+.button.is-secondary::after,
+.button.is-secondary::before,
+.button.is-tertiary::after,
+.button.is-tertiary::before {
+  background-image: none;
+  padding: 0;
+}
+
+.button.is-secondary:hover::before,
+.button.is-secondary:hover::after,
+.button.is-tertiary:hover::before,
+.button.is-tertiary:hover::after {
+  animation: none;
 }
 
 /* styles to apply if a user's device settings are set to reduced motion */
@@ -59,11 +74,6 @@
 }
 
 /* Cards */
-:root {
-  --bg-color: rgb(20, 20, 20);
-  --card-color: rgb(23, 23, 23);
-}
-
 #cards:hover>.service_item::after {
   opacity: 1;
 }
@@ -111,7 +121,7 @@
 }
 
 .service_item>.card-content {
-  background-color: var(--card-color);
+  background-color: var(--color-brand--darkest, #101e50);
   border-radius: inherit;
   display: flex;
   flex-direction: column;
