@@ -161,9 +161,12 @@ html {
 }
 
 ::selection {
-  color: var(--color-brand--dark, #101e50);
-  background-color: var(--color-brand--light, #e9e5e1);
+  color: var(--color-brand--dark);
+  background-color: var(--color-brand--main);
   text-shadow: none;
+  -webkit-text-fill-color: var(--color-brand--dark);
+  text-fill-color: var(--color-brand--dark);
+  background-clip: unset;
 }
 
 /* For text split script */
