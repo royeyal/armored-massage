@@ -41,7 +41,9 @@
 .button.is-secondary::after,
 .button.is-secondary::before,
 .button.is-tertiary::after,
-.button.is-tertiary::before {
+.button.is-tertiary::before,
+.button.is-link::after,
+.button.is-link::before {
   background-image: none;
   padding: 0;
 }
@@ -49,7 +51,9 @@
 .button.is-secondary:hover::before,
 .button.is-secondary:hover::after,
 .button.is-tertiary:hover::before,
-.button.is-tertiary:hover::after {
+.button.is-tertiary:hover::after,
+.button.is-tertiary:is-link::before,
+.button.is-tertiary:is-link::after {
   animation: none;
 }
 
