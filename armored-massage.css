@@ -1,3 +1,9 @@
+.w-nav.is-sticky header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
 @supports (color: color(display-p3 1 1 1)) {
   :root {
     --color-brand--main: color(display-p3 0.176471 0.854902 1.000000 / 1.000000);
@@ -41,7 +47,10 @@
 .button.is-secondary::after,
 .button.is-secondary::before,
 .button.is-tertiary::after,
-.button.is-tertiary::before,
+.button.is-tertiary::before {
+  background-image: conic-gradient(from 331deg, var(--color-brand--darkest), #556EE6, var(--color-brand--darkest));
+  padding: 2px;
+}
 .button.is-link::after,
 .button.is-link::before {
   background-image: none;
