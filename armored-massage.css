@@ -4,6 +4,30 @@
   margin-top: 0;
 }
 
+/* .card__with-border {
+  border-image-source: linear-gradient(90deg, #313A7B 3.5%, #292F64 15.5%, #556EE6 62%, #2DDAFF 81%, #556EE6 89%, #292F64 100%);
+  border-image-repeat: repeat;
+  border-image-slice: 5;
+} */
+.card__with-border::before,
+.card__with-border::after {
+  background-image: linear-gradient(195deg, #313a7b 3.5%, #292f64 15.5%, #556ee6 62%, #2ddaff 81%, #556ee6 89%, #292f64 100%);
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 50%;
+  top: 0;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 1;
+  padding: 0;
+  /* border-radius: var(--border-radius, 10px); */
+}
+.card__with-border::before {
+  top: auto;
+  bottom: 0;
+}
+
 @supports (color: color(display-p3 1 1 1)) {
   :root {
     --color-brand--main: color(display-p3 0.176471 0.854902 1.000000 / 1.000000);
