@@ -2,6 +2,13 @@
   padding-top: 10px;
   padding-bottom: 10px;
   margin-top: 0;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+
+/* class is-sticky for header */
+.navbar1_component.is-sticky {
+  min-height: 4.0rem;
 }
 
 /* .card__with-border {
@@ -212,14 +219,6 @@ html {
   overflow: hidden;
   padding-bottom: 0.1em;
   margin-bottom: -0.1em;
-}
-
-/* class is-sticky for header */
-.navbar1_component.is-sticky {
-  min-height: 4.0rem;
-  background-color: rgba(21, 17, 39, 0.82);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
 }
 
 /* Set color style to inherit */
