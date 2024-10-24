@@ -1,15 +1,12 @@
+/* class is-sticky for header */
 .w-nav.is-sticky header {
   padding-top: 10px;
   padding-bottom: 10px;
   margin-top: 0;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
   background-color: rgba(16, 30, 80, 0.8);
-}
-
-
-/* class is-sticky for header */
-.navbar1_component.is-sticky {
-  min-height: 4.0rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 /* .card__with-border {
