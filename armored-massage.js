@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 
 function initializeSplitText() {
-	const titles = document.querySelectorAll(".heading-style-h2");
-	titles.forEach((title) => {
-		const split = new SplitText(title, {
+	const h2_titles = document.querySelectorAll(".heading-style-h2");
+	h2_titles.forEach((h2_title) => {
+		const split = new SplitText(h2_title, {
 			type: "lines",
 			linesClass: "split-line",
 		});
@@ -39,7 +39,7 @@ function initializeSplitText() {
 		});
 
 		ScrollTrigger.create({
-			trigger: title,
+			trigger: h2_title,
 			start: "top 100%",
 			end: "bottom 0%",
 			animation: tl,
