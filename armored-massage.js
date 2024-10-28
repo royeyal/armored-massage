@@ -45,10 +45,10 @@ function initializeSplitText_H1() {
 		ScrollTrigger.create({
 			trigger: h1_title,
 			start: "top bottom",
-			end: "bottom center",
+			end: "top bottom",
 			animation: tl,
 			toggleActions: "none play none reset",
-			markers: true,
+			//markers: true,
 		});
 	});
 }
@@ -83,7 +83,7 @@ function initializeSplitText_H2() {
 		ScrollTrigger.create({
 			trigger: h2_title,
 			start: "top bottom",
-			end: "bottom center",
+			end: "bottom top",
 			animation: tl,
 			toggleActions: "play reverse play reverse",
 		});
