@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("DOMContentLoaded", () => {
 	gsap.registerPlugin(ScrollTrigger, SplitText);
 	initializeSplitText_H2();
 	initializeSplitText_H1();
@@ -17,7 +17,7 @@ function initializeSplitText_H1() {
 	const h1_titles = document.querySelectorAll(".heading-style-h1");
 	h1_titles.forEach((h1_title) => {
 		const split = new SplitText(h1_title, {
-			type: "words,lines", 
+			type: "words,lines",
 			linesClass: "split-line",
 		});
 		split.lines.forEach((line) => {
@@ -36,18 +36,19 @@ function initializeSplitText_H1() {
 			yPercent: 100,
 			stagger: 0.05,
 			opacity: 0,
-			blur:10,
+			blur: 10,
 			skewY: -3,
 			ease: "power3.out",
-			onComplete: () => split.revert() // Clean up spans after animation
+			onComplete: () => split.revert(), // Clean up spans after animation
 		});
 
 		ScrollTrigger.create({
 			trigger: h1_title,
 			start: "top bottom",
-			end: "bottom bottom",
+			end: "bottom center",
 			animation: tl,
 			toggleActions: "none play none reset",
+			markers: true,
 		});
 	});
 }
@@ -76,13 +77,13 @@ function initializeSplitText_H2() {
 			ease: "power4.out",
 			skewY: -3,
 			stagger: 0.1,
-			onComplete: () => split.revert() // Clean up spans after animation
+			onComplete: () => split.revert(), // Clean up spans after animation
 		});
 
 		ScrollTrigger.create({
 			trigger: h2_title,
-			start: "top 100%",
-			end: "bottom 0%",
+			start: "top bottom",
+			end: "bottom center",
 			animation: tl,
 			toggleActions: "play reverse play reverse",
 		});
