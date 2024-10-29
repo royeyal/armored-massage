@@ -83,7 +83,7 @@ function initializeSplitText_H2() {
 		ScrollTrigger.create({
 			trigger: h2_title,
 			start: "top bottom",
-			end: "bottom 90%",
+			end: "bottom 95%",
 			animation: tl,
 			toggleActions: "none play none reset",
 		});
