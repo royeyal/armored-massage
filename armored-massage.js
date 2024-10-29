@@ -83,43 +83,9 @@ function initializeSplitText_H2() {
 		ScrollTrigger.create({
 			trigger: h2_title,
 			start: "top bottom",
-			end: "bottom top",
+			end: "bottom 90%",
 			animation: tl,
-			toggleActions: "play reverse play reverse",
+			toggleActions: "none play none reset",
 		});
 	});
 }
-
-// let new_titleRegister = document.getElementById("titleRegister");
-// const arrayPlans = [
-// 	"Bronze",
-// 	"Iron",
-// 	"Steel",
-// ];
-
-// document
-// 	.getElementById("button-01")
-// 	.addEventListener("click", function () {
-// 		var select = document.getElementById("select-plan");
-// 		select.value = "Bronze"; // Change the selected option
-// 		select.dispatchEvent(new Event("change")); // Trigger the change event
-// 		new_titleRegister.innerHTML = arrayPlans[0];
-// 	});
-
-// document
-// 	.getElementById("button-02")
-// 	.addEventListener("click", function () {
-// 		var select = document.getElementById("select-plan");
-// 		select.value = "Iron"; // Change the selected option
-// 		select.dispatchEvent(new Event("change")); // Trigger the change event
-// 		new_titleRegister.innerHTML = arrayPlans[1];
-// 	});
-
-// document
-// 	.getElementById("button-03")
-// 	.addEventListener("click", function () {
-// 		var select = document.getElementById("select-plan");
-// 		select.value = "Steel"; // Change the selected option
-// 		select.dispatchEvent(new Event("change")); // Trigger the change event
-// 		new_titleRegister.innerHTML = arrayPlans[2];
-// 	});
