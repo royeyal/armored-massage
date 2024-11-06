@@ -27,6 +27,7 @@
   padding: 0;
   margin-bottom: -3px;
 }
+
 /*.card__with-border::after {
   top: auto;
   bottom: 0px;
@@ -35,6 +36,7 @@
 .w-nav-menu a {
   position: relative;
 }
+
 .w-nav-menu a::before {
   content: '';
   position: absolute;
@@ -48,6 +50,7 @@
   transform: scale3d(0, 1, 1);
   transition: transform 0.3s;
 }
+
 .w-nav-menu a:hover::before {
   transform-origin: 0% 50%;
   transform: scale3d(1, 1, 1);
@@ -100,6 +103,7 @@
   background-image: conic-gradient(from 331deg, var(--color-brand--darkest), #556EE6, var(--color-brand--darkest));
   padding: 2px;
 }
+
 .button.is-link::after,
 .button.is-link::before {
   background-image: none;
