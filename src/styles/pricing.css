@@ -1,0 +1,14 @@
+/* Pricing cards. */
+
+/* The hover ripple is absolutely positioned against .pricing_plan and sits
+   flush against its padding box — 2px in on every side, because the card has a
+   2px border. With square corners of its own inside a card that rounds at 10px
+   and does not clip (the card needs overflow: visible so the gradient border
+   and its blurred glow can sit outside it), each corner of the ripple showed
+   as a hard notch across the card's curve.
+
+   8px is the padding-box radius: the card's 10px outer radius less its 2px
+   border. If either of those changes in the Designer, this follows. */
+.pricing_plan .hover-ripple {
+  border-radius: 8px;
+}

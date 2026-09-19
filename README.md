@@ -61,6 +61,7 @@ touching the live site. It is never built into `dist/`.
 │       ├── gradient-border.css  Animated conic-gradient border (.button, .pricing_plan)
 │       ├── card.css              .card__with-border gradient hairline
 │       ├── card-spotlight.css    Radial glow driven by --cursor-x/y
+│       ├── pricing.css           Pricing card fixes (.hover-ripple corners)
 │       └── split-text.css        Clipping boxes for .line / .word
 ├── worker/index.js               Maps /main.js + /main.css to hashed assets
 ├── docs/webflow-custom-code.md   Exactly what to paste into Webflow
