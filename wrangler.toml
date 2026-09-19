@@ -1,0 +1,36 @@
+# Cloudflare Worker — serves stable /main.js and /main.css URLs for Webflow.
+#
+# Before the first deploy:
+#   1. cp .env.example .env and fill in CLOUDFLARE_API_TOKEN.
+#   2. Confirm account_id below (`wrangler whoami`).
+#   3. npm run deploy — the workers.dev URL is printed on success.
+
+name = "armored-massage-scripts"
+main = "worker/index.js"
+compatibility_date = "2026-02-15"
+account_id = "c84d1e6f99329d834a7cb284c20292dd"
+
+# On until a custom domain is attached: Webflow needs *some* stable origin to
+# point at, and armored-massage-scripts.<subdomain>.workers.dev is it.
+# Serving a JS/CSS bundle from workers.dev is harmless — unlike a full site,
+# there is no duplicate-content or SEO cost to a second URL for an asset.
+workers_dev = true
+
+# To move to assets.armoredmassage.com (the assets.satyield.ai equivalent):
+#   1. The zone must be on this Cloudflare account.
+#   2. Uncomment the route below and deploy — wrangler creates the DNS record.
+#   3. Swap the URLs in Webflow (docs/webflow-custom-code.md), then set
+#      workers_dev = false and redeploy.
+# The token needs Zone -> Workers Routes for this; without it every deploy
+# exits non-zero on the route reconcile even though the upload succeeded.
+# routes = [{ pattern = "assets.armoredmassage.com", custom_domain = true }]
+
+# Workers Assets serves ./dist directly — no KV TTL expiry.
+#
+# run_worker_first: without it, a request matching a literal file in ./dist is
+# answered straight from the asset store and worker/index.js never runs — so
+# the stable-URL rewrite and the CORS/cache headers it sets would be skipped.
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+run_worker_first = true
