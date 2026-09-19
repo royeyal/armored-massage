@@ -3,6 +3,7 @@ import './main.css';
 import { initNavbarScroll } from './js/navbar.js';
 import { initSplitTextHeadings } from './js/split-text-headings.js';
 import { initContentRevealScroll } from './js/content-reveal-scroll.js';
+import { initCardSpotlight } from './js/card-spotlight.js';
 
 // GSAP, ScrollTrigger and SplitText are globals from Webflow's own script
 // tags — see docs/webflow-custom-code.md. If Webflow's GSAP setting is ever
@@ -19,6 +20,9 @@ function hasGsap() {
 }
 
 function init() {
+  // No GSAP dependency, so it runs even if the check below bails.
+  initCardSpotlight();
+
   if (!hasGsap()) return;
 
   gsap.registerPlugin(ScrollTrigger, SplitText);

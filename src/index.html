@@ -81,6 +81,18 @@
         background: #1a2566;
       }
 
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .card {
+        position: relative;
+        z-index: 2;
+        padding: 3rem 1.5rem;
+      }
+
       .button {
         position: relative;
         display: inline-block;
@@ -135,6 +147,32 @@
       </section>
 
       <div class="spacer"></div>
+
+      <section>
+        <h2 class="heading-style-h2">Card cursor spotlight</h2>
+        <div class="cards-grid">
+          <div class="card-wrap">
+            <div class="card">Card one</div>
+            <div class="card-bg"></div>
+            <div class="card-highlight"></div>
+          </div>
+          <div class="card-wrap">
+            <div class="card">Card two</div>
+            <div class="card-bg"></div>
+            <div class="card-highlight"></div>
+          </div>
+          <div class="card-wrap">
+            <div class="card">Card three</div>
+            <div class="card-bg"></div>
+            <div class="card-highlight"></div>
+          </div>
+          <div class="card-wrap">
+            <div class="card">Card four</div>
+            <div class="card-bg"></div>
+            <div class="card-highlight"></div>
+          </div>
+        </div>
+      </section>
 
       <section>
         <a href="#" class="button">Animated border button</a>

@@ -1,0 +1,57 @@
+/* Cursor-following spotlight on the homepage feature cards.
+   js/card-spotlight.js writes --cursor-x / --cursor-y onto each .card-wrap,
+   relative to that card's own box, so every card's gradient tracks the one
+   shared pointer. Hovering anywhere in the grid lights the whole set faintly;
+   the card actually under the pointer gets the stronger highlight. */
+
+.card-wrap {
+  position: relative;
+}
+
+.card-bg {
+  position: absolute;
+  inset: -1px;
+  z-index: 1;
+  border-radius: 11px;
+  background-image: linear-gradient(135deg, #dfeffe38, #dfeffe12);
+}
+
+.card-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  border-radius: 10px;
+  transition: opacity 400ms ease;
+  background-image: radial-gradient(
+    480px at var(--cursor-x) var(--cursor-y),
+    rgb(255 255 255 / 50%),
+    transparent 40%
+  );
+  background-size: auto;
+  background-origin: padding-box;
+}
+
+.cards-grid:hover .card-bg::before {
+  opacity: 1;
+}
+
+.card-highlight {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  opacity: 0;
+  border-radius: 10px;
+  transition: opacity 300ms ease;
+  background-image: radial-gradient(
+    400px at var(--cursor-x) var(--cursor-y),
+    rgb(255 255 255 / 40%),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.card-wrap:hover .card-highlight {
+  opacity: 0.1;
+}
