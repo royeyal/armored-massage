@@ -1,0 +1,185 @@
+/* Client-First / Finsweet utility layer.
+   Generic helpers applied as classes in the Webflow Designer. Nothing here is
+   specific to Armored Massage — keep site-specific rules in their own file. */
+
+/* Inherit color from the parent, through any nesting. */
+.inherit-color * {
+  color: inherit;
+}
+
+/* Rich text: drop the outer margins so the block aligns with its container. */
+.w-richtext > :not(div):first-child,
+.w-richtext > div:first-child > :first-child {
+  margin-top: 0 !important;
+}
+
+.w-richtext > :last-child,
+.w-richtext ol li:last-child,
+.w-richtext ul li:last-child {
+  margin-bottom: 0 !important;
+}
+
+.pointer-events-off {
+  pointer-events: none;
+}
+
+.pointer-events-on {
+  pointer-events: auto;
+}
+
+/* Maintain a 1:1 aspect ratio. */
+.div-square::after {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+
+/* Containers keep their centering regardless of inherited alignment. */
+.container-medium,
+.container-small,
+.container-large {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+/* Truncation */
+.text-style-3lines {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.text-style-2lines {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.truncate-width {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.display-inlineflex {
+  display: inline-flex;
+}
+
+/* Visibility — never overwritten, hence !important. */
+.hide {
+  display: none !important;
+}
+
+@media screen and (width <= 991px) {
+  .hide,
+  .hide-tablet {
+    display: none !important;
+  }
+}
+
+@media screen and (width <= 767px) {
+  .hide-mobile-landscape {
+    display: none !important;
+  }
+}
+
+@media screen and (width <= 479px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+/* Spacing resets */
+.margin-0 {
+  margin: 0 !important;
+}
+
+.padding-0 {
+  padding: 0 !important;
+}
+
+.spacing-clean {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.margin-top {
+  margin-right: 0 !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+}
+
+.padding-top {
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 0 !important;
+}
+
+.margin-right {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+}
+
+.padding-right {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 0 !important;
+}
+
+.margin-bottom {
+  margin-top: 0 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.padding-bottom {
+  padding-top: 0 !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.margin-left {
+  margin-top: 0 !important;
+  margin-right: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.padding-left {
+  padding-top: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.margin-horizontal {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.padding-horizontal {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.margin-vertical {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.padding-vertical {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Hide the native scrollbar while keeping the element scrollable. */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

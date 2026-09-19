@@ -1,0 +1,50 @@
+/* Fluid root font size — every rem in the Webflow design scales with it. */
+html {
+  font-size: calc(0.625rem + 0.4166666666666666vw);
+}
+
+@media screen and (width <= 1920px) {
+  html {
+    font-size: calc(0.625rem + 0.41666666666666674vw);
+  }
+}
+
+@media screen and (width <= 1440px) {
+  html {
+    font-size: calc(0.8126951092611863rem + 0.20811654526534862vw);
+  }
+}
+
+@media screen and (width <= 479px) {
+  html {
+    font-size: calc(0.7494769874476988rem + 0.8368200836820083vw);
+  }
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Wider-gamut brand cyan on displays that can show it; the sRGB value set in
+   Webflow stays as the fallback for those that cannot. */
+@supports (color: color(display-p3 1 1 1)) {
+  :root {
+    --color-brand--main: color(display-p3 0.176471 0.854902 1);
+  }
+}
+
+::selection {
+  color: var(--color-brand--dark);
+  background-color: var(--color-brand--main);
+  text-shadow: none;
+  -webkit-text-fill-color: var(--color-brand--dark);
+  background-clip: unset;
+}
+
+/* Keyboard focus ring for elements Webflow makes focusable. */
+*[tabindex]:focus-visible,
+input[type='file']:focus-visible {
+  outline: 0.125rem solid #4d65ff;
+  outline-offset: 0.125rem;
+}

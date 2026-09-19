@@ -1,0 +1,9 @@
+/* Clipping box for the per-word and per-line reveal in js/split-text-headings.js.
+   The padding/margin pair adds room for descenders, which would otherwise be
+   sliced off by the overflow while the text is mid-animation. */
+.line,
+.word {
+  overflow: hidden;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
