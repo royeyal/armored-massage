@@ -53,12 +53,14 @@ touching the live site. It is never built into `dist/`.
 │   ├── js/
 │   │   ├── navbar.js             .is-sticky on .w-nav past 100px
 │   │   ├── split-text-headings.js  SplitText reveal for h1 (words) / h2 (lines)
-│   │   └── content-reveal-scroll.js  [data-reveal-group] staggered reveals
+│   │   ├── content-reveal-scroll.js  [data-reveal-group] staggered reveals
+│   │   └── card-spotlight.js   Cursor-following glow on .cards-grid cards
 │   └── styles/
 │       ├── utilities.css         Client-First helpers (hide, spacing, truncate)
 │       ├── navbar.css            Sticky state + nav link underline
 │       ├── button.css            Animated conic-gradient border
 │       ├── card.css              .card__with-border gradient hairline
+│       ├── card-spotlight.css    Radial glow driven by --cursor-x/y
 │       └── split-text.css        Clipping boxes for .line / .word
 ├── worker/index.js               Maps /main.js + /main.css to hashed assets
 ├── docs/webflow-custom-code.md   Exactly what to paste into Webflow

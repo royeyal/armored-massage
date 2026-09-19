@@ -113,6 +113,35 @@ double-wraps every word and line.
 
 ---
 
+## Page Settings → Home → Custom Code
+
+Only tracking lives here now. Both blocks previously also held first-party
+code, which has moved into the bundle.
+
+**Head** — Meta Pixel and a second GA4 property:
+
+- `fbq('init', '24450269904639776')` + `fbq('track', 'PageView')`
+- `gtag('config', 'G-187WR85PRR')`
+
+Two open questions on these, both for the client rather than for this repo:
+
+- **Both are Home-only.** The Meta Pixel fires no PageView on `/pricing`,
+  `/contact` or any service page, so Meta ads pointing at those pages build no
+  audience and attribute no conversions. It almost certainly belongs site-wide.
+- **`G-187WR85PRR` is a second GA4 property**, separate from the site-wide
+  `G-YNTGQP6YJK`. Being Home-only it records almost nothing, which suggests it
+  was pasted onto whichever page was open at the time.
+
+**Footer** — empty but for a pointer comment. It used to hold two scripts:
+
+- The card cursor spotlight, now `src/js/card-spotlight.js` and
+  `src/styles/card-spotlight.css`.
+- A `gsap.from('.service_item', …)` tween, deleted rather than ported. No
+  element on any page of the site carries that class; GSAP logged
+  `target .service_item not found` and built no ScrollTrigger. Reviving it
+  needs a selector only the Designer can supply.
+
+
 ## GSAP
 
 GSAP, ScrollTrigger and SplitText are loaded by Webflow's own GSAP integration
