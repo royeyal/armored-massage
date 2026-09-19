@@ -30,16 +30,31 @@
   z-index: -1;
   padding: 3px;
   border-radius: var(--border-radius, 10px);
-}
 
-.button::before {
-  filter: blur(1.5rem);
-  opacity: 0.5;
+  /* Declared here and merely paused, rather than declared inside :hover.
+     An animation that only exists while hovered is torn down on leave, which
+     drops --angle back to its 0deg initial-value — so the border snapped back
+     and the next hover restarted the spin from zero. Pausing holds the angle
+     where it stopped and resuming carries on from there. */
+  animation: 3s spin linear infinite;
+  animation-play-state: paused;
 }
 
 .button:hover::before,
 .button:hover::after {
-  animation: 3s spin linear infinite;
+  animation-play-state: running;
+}
+
+/* The glow fades up on hover rather than sitting at full strength, so the
+   hover reads as a state change and not just "the gradient started moving". */
+.button::before {
+  filter: blur(1.5rem);
+  opacity: 0.15;
+  transition: opacity 400ms ease;
+}
+
+.button:hover::before {
+  opacity: 0.5;
 }
 
 .button.is-secondary::after,
@@ -53,6 +68,9 @@
     var(--color-brand--darkest)
   );
   padding: 2px;
+
+  /* These two keep a fixed gradient angle in every state. */
+  animation: none;
 }
 
 .button.is-link::after,
@@ -61,17 +79,10 @@
   padding: 0;
 }
 
-.button.is-secondary:hover::before,
-.button.is-secondary:hover::after,
-.button.is-tertiary:hover::before,
-.button.is-tertiary:hover::after {
-  animation: none;
-}
-
-@media (prefers-reduced-motion) {
+@media (prefers-reduced-motion: reduce) {
   .button:hover::before,
   .button:hover::after {
-    animation: none;
+    animation-play-state: paused;
   }
 }
 
