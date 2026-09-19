@@ -142,6 +142,31 @@ Two open questions on these, both for the client rather than for this repo:
   needs a selector only the Designer can supply.
 
 
+## The "Global Styles" component
+
+`.page-wrapper` opens with a component named **Global Styles**, whose root is
+an HTML Embed carrying class `global-styles`. It is on every page.
+
+It used to hold a complete copy of the original `armored-massage.css`. Because
+an embed renders inside `<body>`, it landed after the `<link>` in `<head>` and
+won every tie at equal specificity — so the bundle was silently shadowed for
+any rule the two shared. That is why a change to the button's resting glow
+had no visible effect until this was dealt with.
+
+Its contents are now a pointer comment. The CSS it held is archived verbatim
+at `docs/archive/global-styles-embed.css`, and every rule in it lives in
+`src/styles/` — `.pricing_plan` was the last one missing and was added to
+`gradient-border.css` before the embed was emptied.
+
+**Do not paste CSS into that embed.** Anything put there outranks the bundle
+and the next person will lose an hour finding out why. New styles go in
+`src/styles/` and ship through `main.css`.
+
+Worth remembering when auditing: Site Settings and page-level custom code are
+not the only places Webflow holds code. Embed elements on the canvas are a
+third, and they do not show up in either custom-code field.
+
+
 ## GSAP
 
 GSAP, ScrollTrigger and SplitText are loaded by Webflow's own GSAP integration
