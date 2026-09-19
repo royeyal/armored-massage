@@ -1,6 +1,6 @@
-/* Animated conic-gradient border on buttons.
+/* Animated conic-gradient border, shared by .button and .pricing_plan.
    Two pseudo-elements: ::after is the crisp ring, ::before the blurred glow
-   behind it. Both sit at z-index -1, so the button needs its own stacking
+   behind it. Both sit at z-index -1, so the element needs its own stacking
    context and a background in Webflow or they disappear behind the section. */
 
 @property --angle {
@@ -10,7 +10,9 @@
 }
 
 .button::after,
-.button::before {
+.button::before,
+.pricing_plan::after,
+.pricing_plan::before {
   content: '';
   position: absolute;
   height: 100%;
@@ -41,19 +43,23 @@
 }
 
 .button:hover::before,
-.button:hover::after {
+.button:hover::after,
+.pricing_plan:hover::before,
+.pricing_plan:hover::after {
   animation-play-state: running;
 }
 
 /* The glow fades up on hover rather than sitting at full strength, so the
    hover reads as a state change and not just "the gradient started moving". */
-.button::before {
+.button::before,
+.pricing_plan::before {
   filter: blur(1.5rem);
   opacity: 0.15;
   transition: opacity 400ms ease;
 }
 
-.button:hover::before {
+.button:hover::before,
+.pricing_plan:hover::before {
   opacity: 0.5;
 }
 
@@ -81,7 +87,9 @@
 
 @media (prefers-reduced-motion: reduce) {
   .button:hover::before,
-  .button:hover::after {
+  .button:hover::after,
+  .pricing_plan:hover::before,
+  .pricing_plan:hover::after {
     animation-play-state: paused;
   }
 }

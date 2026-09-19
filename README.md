@@ -58,7 +58,7 @@ touching the live site. It is never built into `dist/`.
 │   └── styles/
 │       ├── utilities.css         Client-First helpers (hide, spacing, truncate)
 │       ├── navbar.css            Sticky state + nav link underline
-│       ├── button.css            Animated conic-gradient border
+│       ├── gradient-border.css  Animated conic-gradient border (.button, .pricing_plan)
 │       ├── card.css              .card__with-border gradient hairline
 │       ├── card-spotlight.css    Radial glow driven by --cursor-x/y
 │       └── split-text.css        Clipping boxes for .line / .word
