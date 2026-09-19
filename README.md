@@ -54,7 +54,8 @@ touching the live site. It is never built into `dist/`.
 │   │   ├── navbar.js             .is-sticky on .w-nav past 100px
 │   │   ├── split-text-headings.js  SplitText reveal for h1 (words) / h2 (lines)
 │   │   ├── content-reveal-scroll.js  [data-reveal-group] staggered reveals
-│   │   └── card-spotlight.js   Cursor-following glow on .cards-grid cards
+│   │   ├── card-spotlight.js   Cursor-following glow on .cards-grid cards
+│   │   └── faq-reveal.js       Staggered reveal for .card__with-border FAQ cards
 │   └── styles/
 │       ├── utilities.css         Client-First helpers (hide, spacing, truncate)
 │       ├── navbar.css            Sticky state + nav link underline

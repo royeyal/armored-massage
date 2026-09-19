@@ -167,6 +167,18 @@ not the only places Webflow holds code. Embed elements on the canvas are a
 third, and they do not show up in either custom-code field.
 
 
+## Page Settings → Pricing → Custom Code
+
+**Head** — a second `gtag` for `G-187WR85PRR`. Not ours to remove: the same
+snippet is pasted into the head of ten pages individually (all but `/terms`,
+`/hiring` and `/recruitment-for-armored-massage`), so it is a near-site-wide
+install done page by page. It stays until the client says whether the property
+is in use; if it is, it belongs in Site Settings once rather than in ten pages.
+
+**Footer** — held a `gsap.from('.card__with-border', …)` tween, which is real
+and not dead: five FAQ cards on that page carry the class. Ported to
+`src/js/faq-reveal.js`, so the footer block can be deleted.
+
 ## GSAP
 
 GSAP, ScrollTrigger and SplitText are loaded by Webflow's own GSAP integration

@@ -4,6 +4,7 @@ import { initNavbarScroll } from './js/navbar.js';
 import { initSplitTextHeadings } from './js/split-text-headings.js';
 import { initContentRevealScroll } from './js/content-reveal-scroll.js';
 import { initCardSpotlight } from './js/card-spotlight.js';
+import { initFaqReveal } from './js/faq-reveal.js';
 
 // GSAP, ScrollTrigger and SplitText are globals from Webflow's own script
 // tags — see docs/webflow-custom-code.md. If Webflow's GSAP setting is ever
@@ -30,6 +31,7 @@ function init() {
   initNavbarScroll();
   initSplitTextHeadings();
   initContentRevealScroll();
+  initFaqReveal();
 }
 
 // Waiting on document.fonts as well as DOM: SplitText measures line boxes, and

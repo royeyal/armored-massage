@@ -12,3 +12,16 @@
 .pricing_plan .hover-ripple {
   border-radius: 8px;
 }
+
+/* Feature rows are authored as a fixed set of five slots per plan, so the
+   shorter plans leave trailing rows whose label is blank — a tick floating
+   beside nothing. Hide the whole row when its label element has no content.
+
+   :empty is exact: it matches only an element with no child nodes at all, so
+   a label containing a space or a &nbsp; would NOT be caught here. If a blank
+   tick ever reappears, check the label's contents in the Designer before
+   changing this rule. The cards sit in a grid and stretch to equal height, so
+   removing rows does not make them ragged. */
+.pricing19_feature:has(> :last-child:empty) {
+  display: none;
+}
