@@ -41,7 +41,6 @@ CDN integration and are **not** bundled.
   page-level custom code, and Embed elements on the canvas. The last is easy
   to miss and outranks this bundle, because an embed renders in `<body>` while
   our stylesheet is linked in `<head>`. See `docs/webflow-custom-code.md`.
-
 - `worker/index.js` imports `dist/.vite/manifest.json` at build time, so
   `wrangler deploy` must be preceded by `npm run build`. `npm run deploy` does
   both; running wrangler alone against a stale `dist/` ships the old hash.
