@@ -28,18 +28,18 @@
   "license": "MIT",
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "autoprefixer": "^10.6.2",
+    "autoprefixer": "^10.7.0",
     "cssnano": "^9.9.0",
     "eslint": "^10.15.0",
     "eslint-config-prettier": "^10.1.8",
     "postcss": "^8.5.33",
     "postcss-nesting": "^14.0.3",
     "prettier": "^3.10.1",
-    "stylelint": "^18.0.0",
-    "stylelint-config-standard": "^41.0.0",
-    "terser": "^5.51.2",
+    "stylelint": "^18.1.0",
+    "stylelint-config-standard": "^41.1.0",
+    "terser": "^5.51.4",
     "vite": "^8.3.8",
-    "wrangler": "^4.162.0"
+    "wrangler": "^4.168.0"
   },
   "allowScripts": {
     "esbuild": true,
